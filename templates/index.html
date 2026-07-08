@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Survival Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <header>
+            <h1>Titanic Predictor</h1>
+            <p>Will you survive the disaster?</p>
+        </header>
+        
+        <main>
+            <form id="prediction-form" class="glass-panel">
+                <div class="form-grid">
+                    <div class="input-group full-width">
+                        <label for="Name">Passenger Name</label>
+                        <input type="text" id="Name" name="Name" placeholder="e.g. Braund, Mr. Owen Harris" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="Pclass">Ticket Class</label>
+                        <select id="Pclass" name="Pclass" required>
+                            <option value="1">1st Class</option>
+                            <option value="2">2nd Class</option>
+                            <option value="3">3rd Class</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="Sex">Sex</label>
+                        <select id="Sex" name="Sex" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="Age">Age</label>
+                        <input type="number" id="Age" name="Age" min="0" max="120" step="0.1" placeholder="e.g. 28">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="Fare">Fare ($)</label>
+                        <input type="number" id="Fare" name="Fare" min="0" step="0.01" placeholder="e.g. 32.50" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="SibSp">Siblings/Spouses</label>
+                        <input type="number" id="SibSp" name="SibSp" min="0" value="0" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="Parch">Parents/Children</label>
+                        <input type="number" id="Parch" name="Parch" min="0" value="0" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="Embarked">Port of Embarkation</label>
+                        <select id="Embarked" name="Embarked">
+                            <option value="S">Southampton (S)</option>
+                            <option value="C">Cherbourg (C)</option>
+                            <option value="Q">Queenstown (Q)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="Cabin">Cabin</label>
+                        <input type="text" id="Cabin" name="Cabin" placeholder="e.g. C85 (Optional)">
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Predict Survival</span>
+                    <div class="spinner"></div>
+                </button>
+            </form>
+
+            <div id="result-container" class="glass-panel hidden">
+                <h2 id="result-title"></h2>
+                <div class="probability-bar-container">
+                    <div id="probability-bar" class="probability-bar"></div>
+                </div>
+                <p id="result-text"></p>
+                <button id="reset-btn" class="secondary-btn">Predict Again</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

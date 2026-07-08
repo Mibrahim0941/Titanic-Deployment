@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import pandas as pd
 import numpy as np
 import joblib
@@ -47,7 +47,7 @@ FEATURES = [
 
 @app.route("/")
 def home():
-    return "Titanic Survival Prediction API"
+    return render_template("index.html")
 
 @app.route("/predict", methods=["POST"])
 def predict():
