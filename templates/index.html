@@ -23,22 +23,50 @@
                         <input type="text" id="Name" name="Name" placeholder="e.g. Braund, Mr. Owen Harris" required>
                     </div>
 
-                    <div class="input-group">
-                        <label for="Pclass">Ticket Class</label>
-                        <select id="Pclass" name="Pclass" required>
-                            <option value="1">1st Class</option>
-                            <option value="2">2nd Class</option>
-                            <option value="3">3rd Class</option>
-                        </select>
-                    </div>
+                    <fieldset class="input-group full-width">
+                        <legend>Ticket Class</legend>
+                        <div class="radio-card-group">
+                            <label class="radio-card">
+                                <input type="radio" name="Pclass" value="1" required>
+                                <div class="card-content">
+                                    <span class="title">1st Class</span>
+                                    <span class="desc">Luxury</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="Pclass" value="2">
+                                <div class="card-content">
+                                    <span class="title">2nd Class</span>
+                                    <span class="desc">Standard</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="Pclass" value="3">
+                                <div class="card-content">
+                                    <span class="title">3rd Class</span>
+                                    <span class="desc">Economy</span>
+                                </div>
+                            </label>
+                        </div>
+                    </fieldset>
 
-                    <div class="input-group">
-                        <label for="Sex">Sex</label>
-                        <select id="Sex" name="Sex" required>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </div>
+                    <fieldset class="input-group full-width">
+                        <legend>Sex</legend>
+                        <div class="radio-card-group">
+                            <label class="radio-card">
+                                <input type="radio" name="Sex" value="male" required>
+                                <div class="card-content">
+                                    <span class="title">Male</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="Sex" value="female">
+                                <div class="card-content">
+                                    <span class="title">Female</span>
+                                </div>
+                            </label>
+                        </div>
+                    </fieldset>
 
                     <div class="input-group">
                         <label for="Age">Age</label>
@@ -60,14 +88,32 @@
                         <input type="number" id="Parch" name="Parch" min="0" value="0" required>
                     </div>
 
-                    <div class="input-group">
-                        <label for="Embarked">Port of Embarkation</label>
-                        <select id="Embarked" name="Embarked">
-                            <option value="S">Southampton (S)</option>
-                            <option value="C">Cherbourg (C)</option>
-                            <option value="Q">Queenstown (Q)</option>
-                        </select>
-                    </div>
+                    <fieldset class="input-group full-width">
+                        <legend>Port of Embarkation</legend>
+                        <div class="radio-card-group">
+                            <label class="radio-card">
+                                <input type="radio" name="Embarked" value="S" checked>
+                                <div class="card-content">
+                                    <span class="title">Southampton</span>
+                                    <span class="desc">England</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="Embarked" value="C">
+                                <div class="card-content">
+                                    <span class="title">Cherbourg</span>
+                                    <span class="desc">France</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="Embarked" value="Q">
+                                <div class="card-content">
+                                    <span class="title">Queenstown</span>
+                                    <span class="desc">Ireland</span>
+                                </div>
+                            </label>
+                        </div>
+                    </fieldset>
 
                     <div class="input-group">
                         <label for="Cabin">Cabin</label>

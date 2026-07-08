@@ -15,13 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = {};
         
         for (let [key, value] of formData.entries()) {
-            if (value !== '') {
-                // Parse numeric fields properly
-                if (['Pclass', 'Age', 'SibSp', 'Parch', 'Fare'].includes(key)) {
-                    data[key] = parseFloat(value);
-                } else {
-                    data[key] = value;
-                }
+            if (value === '') {
+                data[key] = null;
+            } else if (['Pclass', 'Age', 'SibSp', 'Parch', 'Fare'].includes(key)) {
+                data[key] = parseFloat(value);
+            } else {
+                data[key] = value;
             }
         }
 

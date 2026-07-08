@@ -56,7 +56,11 @@ def predict():
 
     df = pd.DataFrame([data])
 
-    title = df.loc[0, "Name"].split(",")[1].split(".")[0].strip()
+    name_str = str(df.loc[0, "Name"]) if "Name" in df.columns else ""
+    if "," in name_str and "." in name_str.split(",")[1]:
+        title = name_str.split(",")[1].split(".")[0].strip()
+    else:
+        title = "Mr"
 
     title = title_map.get(title, title)
 
@@ -69,7 +73,7 @@ def predict():
 
     df["IsAlone"] = (df["FamilySize"] == 1).astype(int)
 
-    cabin = str(df.loc[0, "Cabin"])
+    cabin = str(df.loc[0, "Cabin"]) if "Cabin" in df.columns else "nan"
 
     if cabin == "" or cabin == "nan":
         deck = "U"
