@@ -75,7 +75,7 @@ def predict():
 
     cabin = str(df.loc[0, "Cabin"]) if "Cabin" in df.columns else "nan"
 
-    if cabin == "" or cabin == "nan":
+    if cabin == "" or cabin == "nan" or cabin == "None":
         deck = "U"
     else:
         deck = cabin[0]
